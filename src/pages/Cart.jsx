@@ -40,7 +40,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                             {book.title}
                           </span>
                           <span className="cart__book--price">
-                            ${(book.salePrice || book.originalPrice).toFixed(2)}
+                            £{(book.salePrice || book.originalPrice).toFixed(2)}
                           </span>
                           <button
                             className="cart__book--remove"
@@ -62,7 +62,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                         />
                       </div>
                       <div className="cart__total">
-                        $
+                        £
                         {(
                           (book.salePrice || book.originalPrice) * book.quantity
                         ).toFixed(2)}
@@ -85,15 +85,15 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
               <div className="total">
                 <div className="total__item total__sub-total">
                   <span>Subtotal</span>
-                  <span>${(total() * 0.9).toFixed(2)}</span>
+                  <span>£{(total() * 0.9).toFixed(2)}</span>
                 </div>
                 <div className="total__item total__tax">
                   <span>Tax</span>
-                  <span>${(total() * 0.1).toFixed(2)}</span>
+                  <span>£{(total() * 0.1).toFixed(2)}</span>
                 </div>
                 <div className="total__item total__price">
                   <span>Total</span>
-                  <span>${total().toFixed(2)}</span>
+                  <span>£{total().toFixed(2)}</span>
                 </div>
                 <button className="btn btn__checkout no-cursor">
                   Proceed to checkout
